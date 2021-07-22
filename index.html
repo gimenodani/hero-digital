@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hero Digital Application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/dist/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+    />
+  </head>
+  <body>
+    <main>
+      <header>
+          <h1>Sign up for email updates</h1>
+      </header>
+      <section>
+        <p>*Indicates Required Field</p>
+        <form
+          class="digital-form"
+          name="digitalForm"
+          id="digitalForm"
+          method="POST">
+          <div class="form-group left-col">
+            <div class="error-container">
+              <div
+                class="digital-error"
+                role="alert">
+                First name is required
+              </div>
+            </div>
+            <label for="firstName">first name*</label>
+            <input
+              type="text"
+              aria-label="First Name"
+              class="form-control"
+              name="firstName"
+              id="firstName"
+              onblur="validateInput(this)"/>
+          </div>
+          <div class="form-group">
+            <div class="error-container">
+              <div
+                class="digital-error"
+                role="alert">
+                Last name is required
+              </div>
+            </div>
+            <label for="lastName">last name*</label>
+            <input
+              type="text"
+              aria-label="Last Name"
+              class="form-control"
+              name="lastName"
+              id="lastName"
+              onblur="validateInput(this)"/>
+          </div>
+          <div class="form-group left-col">
+            <div class="error-container">
+              <div
+                class="digital-error"
+                role="alert">
+                Valid Email is required
+              </div>
+            </div>
+            <label for="eMail">Email address*</label>
+            <input
+              type="email"
+              aria-label="Email"
+              class="form-control"
+              name="email"
+              id="email"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              onblur="validateInput(this)"/>
+          </div>
+          <div class="form-group error-space">
+            <label for="organization">organization</label>
+            <input
+              type="text"
+              aria-label="Organization"
+              class="form-control"
+              id="organization"/>
+          </div>
+          <div class="form-group euResident">
+            <div class="error-container" id="euError">
+              <div
+                class="digital-error"
+                role="alert">
+                EU resident is required
+              </div>
+            </div>
+            <label>eu resident*</label>
+            <select
+              class="form-control"
+              id="euResident"
+              aria-label="eu resident"
+            >
+              <option disabled selected value="Please Select"> -- select an option -- </option>
+              <option value="yes">yes</option>
+              <option value="yes">no</option>
+            </select>
+
+            <!-- <div class="euResident-container">
+              <div class="euResident-select" aria-label="eu resident">
+                <div class="euResident-select-opt">
+                  <span id="validateSelect">- Select one -</span>
+                  <div class="arrow"></div>
+                </div>
+                <div class="euResident-options">
+                  <span class="euResident-option selected disabled" disabled data-value="select">- Select one -</span>
+                  <span class="euResident-option" data-value="yes">yes</span>
+                  <span class="euResident-option" data-value="no">no</span>
+                </div>
+              </div>
+            </div> -->
+          </div>
+          <div
+            class="form-group check-group">
+            <div class="error-container">
+              <div class="digital-error" role="alert" id="myCheckboxGroup">
+                At least one option needs to be selected
+              </div>
+            </div>
+            <div class="check-box" role="group">
+              <div class="form-check">
+                <label class="check-container">advances
+                  <input
+                    type="checkbox"
+                    id="advances"
+                    value="advances"
+                    aria-label="Advances option"/>
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="check-container">alerts
+                  <input
+                    type="checkbox"
+                    id="alerts"
+                    value="alerts"
+                    aria-label="Alerts option"/>
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="check-container">other communications
+                  <input
+                    type="checkbox"
+                    id="otherCom"
+                    value="otherCom"
+                    aria-label="Other Communications option"/>
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group btn-group">
+            <button
+              type="submit"
+              id="submitForm"
+              class="btn btn-primary"
+              onclick="return validateForm()">
+              Submit
+            </button>
+            <button
+              type="clear"
+              class="btn btn-secondary"
+              onclick="reset()">
+              reset
+            </button>
+          </div>
+        </form>
+        <p id="success"></p>
+      </section>
+    </main>
+
+    <script type="text/javascript" src="js/scripts.js"></script>
+  </body>
+</html>
